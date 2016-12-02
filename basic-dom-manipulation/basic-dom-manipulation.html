@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Display Date</title>
 	<style>
+		body {
+			transition: 0.4s;
+		}
 		div {
 			width: 100px;
 			height: 100px;
@@ -11,17 +14,32 @@
 	</style>
 </head>
 <body>
-	<p id="text">text will be replaced</p>
-
+	<h1 id="text" onclick="mod()">text will be replaced</h1>
+	
+	<button onclick="remove()">Remove</button>
+	<p id="remove">text to remove</p>
 	<script>
-		//paragraph
-		document.getElementById("text").innerHTML = "Hello World!";
+		//changing paragraph
+		document.getElementById("text").innerHTML = "Hello World! Click me";
 
-		//new div
+		//styling paragraph
+		function mod(){
+			document.getElementById("text").style.color = "blue";
+			document.getElementById("text").style.fontSize = "45px";
+		}
+
+		//creating new div
 		var el = document.createElement("div");
 		document.body.appendChild(el);
 		el.className = "container";
 		el.style.backgroundColor = "red";
+
+		//removing
+		var p = document.getElementById("remove");
+
+		function remove() {
+			document.body.removeChild(p);
+		}
 	</script>
 </body>
 </html>
