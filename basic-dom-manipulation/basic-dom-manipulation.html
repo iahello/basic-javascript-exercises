@@ -11,7 +11,13 @@
 	</style>
 </head>
 <body>
+	<p id="text">text will be replaced</p>
+
 	<script>
+		//paragraph
+		document.getElementById("text").innerHTML = "Hello World!";
+
+		//new div
 		var el = document.createElement("div");
 		document.body.appendChild(el);
 		el.className = "container";
